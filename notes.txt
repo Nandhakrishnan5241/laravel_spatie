@@ -1,0 +1,17 @@
+1. composer require spatie/laravel-permission
+2. added this code in config/app.php 
+    'providers' => [
+        Spatie\Permission\PermissionServiceProvider::class,
+    ];
+3. php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+4. php artisan migrate
+5. The User model requires this trait -->  use HasRoles;
+6. created controller for Roles and Permissions 
+    php artisan make:controller PermissionContoller
+    php artisan make:controller RolesController
+
+7. done with CRUD for roles, permissions table,
+8. finally integreated with role_has_permissions table
+
+// here after assign the multiple roles for particular User
+9. php artisan make:controller UserController
